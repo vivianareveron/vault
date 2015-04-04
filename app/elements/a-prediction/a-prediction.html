@@ -1,0 +1,39 @@
+<link rel="import" href="..\..\bower_components/polymer/polymer.html">
+
+<polymer-element name="a-prediction" attributes="">
+  <template>
+         <ul>
+             <template repeat="{{n in openPredictions}}">
+             <li>
+                 <paper-shadow layout center>{{n.name}}</paper-shadow>
+             </li>
+             </template>    
+        </ul> 
+            
+     
+           
+      
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+  </template>
+  <script>
+    (function () {
+      Polymer('a-prediction',{
+        // define element prototype here
+              ready: function(){
+                this.openPredictions = [
+                    {name:'world'},
+                    {name:'moon'},
+                    {name:'sun'},
+                    {name:'jupiter'},
+                    {name:'hola'},
+                    {name:'perro'},
+                ];
+              }
+      });
+    })();
+  </script>
+</polymer-element>

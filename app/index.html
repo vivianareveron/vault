@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prediction Vault</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
+  <script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
+ 
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+</head>
+  
+<body unresolved fullbleed layout vertical>
+  <template is="auto-binding" id="app">    
+ 
+    <core-drawer-panel id='drawerPanel'>
+      <core-header-panel drawer mode="seamed" shadow="true">
+            <core-toolbar>
+                <paper-item noink>Menu</paper-item>
+            </core-toolbar>
+        <core-menu selected="{{route}}" valueattr="data-route">
+              
+            <paper-item data-route="notifications">
+                  <a href="/#!/notifications">
+                     Notifications
+                  </a>
+            </paper-item>
+              
+            <paper-item data-route="create"> 
+                  <a href="/#!/create">
+                      Create
+                  </a>
+            </paper-item>
+              
+            <paper-item data-route="myprofile">
+                  <a href="/#!/myprofile">
+                     My Profile
+                  </a>
+            </paper-item>    
+            <paper-item>
+                  <a href="/#!/">
+                      Log out
+                  </a>
+              </paper-item>
+        </core-menu>
+     </core-header-panel>
+     
+      <div main layout vertical>
+        <core-header-panel id="headerPanel" mode="seamed" shadow="true" flex>  
+        
+        <core-toolbar>
+            <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
+            <core-menu selected="{{route}}" valueattr="data-route" layout horizontal flex>
+                <core-item data-route="home" center-justified flex label="Latest"><a href="/#!"/></a></core-item>
+                <core-item data-route="friends" center-justified flex label="Friend's"><a href="/#!/friends"></a></core-item>
+                <core-item data-route="mine" center-justified flex label="Mine"><a href="/#!/mine"></a></core-item>
+            </core-menu>
+            <paper-menu-button id="menuBtn" noink center-justified>
+                <paper-icon-button icon="search"></paper-icon-button>
+            </paper-menu-button>
+        </core-toolbar>
+        
+      <div class="content">
+        <core-list id="list" data="{{contacts}}" scrollTarget="{{$.headerPanel.scroller}}" runwayFactor="5" flex>
+            
+        <core-animated-pages selected={{route}} valueattr="data-route" transitions="cross-fade">
+            <section data-route="home">
+                <the-latests cross-fade></the-latests>
+            </section>
+        
+            <section data-route="friends">
+                <my-friends cross-fade></my-friends>
+            </section>    
+        
+            <section data-route="mine">
+                <my-predictions cross-fade></my-predictions> 
+            </section> 
+            
+            <section data-route="notifications">
+                <my-notifications cross-fade></my-notifications> 
+            </section>    
+            
+            <section data-route="create">
+                <create-prediction cross-fade></create-prediction>
+            </section>  
+            
+            <section data-route="myprofile">
+                <my-profile cross-fade></my-profile> 
+            </section> 
+            
+        </core-animated-pages>
+   
+          <!--
+          <template>
+             
+            <a href="{{index | getUrl}}" on-click="{{navigate}}">
+              <div class="row" layout horizontal center>
+                <core-image src="{{model.avatar}}" preload sizing="cover">
+                  </core-image>
+                <div flex>{{model.name}}</div>
+              </div>
+            </a>
+          </template>
+          -->
+        </core-list>
+       </div>
+     </div> 
+      </core-header-panel>  
+    </core-drawer-panel>
+  </template>    
+
+       <!-- build:js scripts/app.js -->
+  <script src="../bower_components/page.js/page.js"></script>    
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
+</html>

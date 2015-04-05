@@ -2,13 +2,29 @@
 
 <polymer-element name="a-prediction" attributes="">
   <template>
-         <ul>
+        
              <template repeat="{{n in openPredictions}}">
-             <li>
-                 <paper-shadow layout center>{{n.name}}</paper-shadow>
-             </li>
+             
+                 <paper-shadow layout center>
+                    
+                    <div flex class="predheader">  
+                        <core-image src="../../images/vivi.jpg" preload fade cover center></core-image>
+                    <div flex>{{n.user}}</div>
+                    <div flex>{{n.title}}</div>
+                   </div>
+                <div flex class="predcontent">
+                    <div flex>Created:{{n.createdDate}}</div> 
+                    <div flex>To be opened by: {{n.openedBy}}</div>
+                    <div flex>Category:{{n.category}}</div>
+                    <div flex><p>{{n.content}}</p></div>
+                </div>
+                     
+                     
+                     
+                 </paper-shadow>
+         
              </template>    
-        </ul> 
+       
             
      
            
@@ -19,20 +35,11 @@
       }
     </style>
   </template>
+        
   <script>
     (function () {
-      Polymer('a-prediction',{
+      Polymer({
         // define element prototype here
-              ready: function(){
-                this.openPredictions = [
-                    {name:'world'},
-                    {name:'moon'},
-                    {name:'sun'},
-                    {name:'jupiter'},
-                    {name:'hola'},
-                    {name:'perro'},
-                ];
-              }
       });
     })();
   </script>

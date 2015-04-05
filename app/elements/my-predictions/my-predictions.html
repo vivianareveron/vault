@@ -4,108 +4,24 @@
   <template>
     <link rel="stylesheet" href="my-predictions.css">
      
-      <paper-shadow layout center>
-                
-                <div flex class="predheader">  <core-image src="../../images/vivi.jpg" preload fade cover center></core-image>
-                    <div flex>My predictions</div>
-                    <div flex>I predict that....</div>
-                </div>
-                <div flex class="predcontent">
-                    <div flex>Created:000/00/00</div> 
-                    <div flex>To be opened by: user</div>
-                    <div flex>Category: personal</div>
-                    <div flex><p>dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg</p></div>
-                </div>
-     </paper-shadow>
+    
+       <the-predictions id="predictions"></the-predictions>
       
-          <paper-shadow layout center>
-                
-                <div flex class="predheader">  <core-image src="../../images/vivi.jpg" preload fade cover center></core-image>
-                    <div flex>My predictions</div>
-                    <div flex>I predict that....</div>
+             <template repeat="{{p in mine}}">   
+                 <paper-shadow layout center>
+                  
+                      <div flex class="predheader">  <core-image src="../../images/vivi.jpg" preload fade cover center></core-image>
+                    <div flex>{{p.userName}}</div>
+                    <div flex>{{p.title}}</div>
                 </div>
                 <div flex class="predcontent">
-                    <div flex>Created:000/00/00</div> 
-                    <div flex>To be opened by: user</div>
-                    <div flex>Category: personal</div>
-                    <div flex><p>dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg</p></div>
+                    <div flex>Created:{{p.created}}</div> 
+                    <div flex>To be opened by:{{p.openedBy}}</div>
+                    <div flex>Category: {{p.category}}</div>
+                    <div flex><p>{{p.content}}</p></div>
                 </div>
-     </paper-shadow>
-          <paper-shadow layout center>
-                
-                <div flex class="predheader">  <core-image src="../../images/vivi.jpg" preload fade cover center></core-image>
-                    <div flex>My predictions</div>
-                    <div flex>I predict that....</div>
-                </div>
-                <div flex class="predcontent">
-                    <div flex>Created:000/00/00</div> 
-                    <div flex>To be opened by: user</div>
-                    <div flex>Category: personal</div>
-                    <div flex><p>dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg</p></div>
-                </div>
-     </paper-shadow>
-      
-          <paper-shadow layout center>
-                
-                <div flex class="predheader">  <core-image src="../../images/vivi.jpg" preload fade cover center></core-image>
-                    <div flex>My predictions</div>
-                    <div flex>I predict that....</div>
-                </div>
-                <div flex class="predcontent">
-                    <div flex>Created:000/00/00</div> 
-                    <div flex>To be opened by: user</div>
-                    <div flex>Category: personal</div>
-                    <div flex><p>dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg</p></div>
-                </div>
-     </paper-shadow>    <paper-shadow layout center>
-                
-                <div flex class="predheader">  <core-image src="../../images/vivi.jpg" preload fade cover center></core-image>
-                    <div flex>My predictions</div>
-                    <div flex>I predict that....</div>
-                </div>
-                <div flex class="predcontent">
-                    <div flex>Created:000/00/00</div> 
-                    <div flex>To be opened by: user</div>
-                    <div flex>Category: personal</div>
-                    <div flex><p>dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg</p></div>
-                </div>
-     </paper-shadow>    <paper-shadow layout center>
-                
-                <div flex class="predheader">  <core-image src="../../images/vivi.jpg" preload fade cover center></core-image>
-                    <div flex>My predictions</div>
-                    <div flex>I predict that....</div>
-                </div>
-                <div flex class="predcontent">
-                    <div flex>Created:000/00/00</div> 
-                    <div flex>To be opened by: user</div>
-                    <div flex>Category: personal</div>
-                    <div flex><p>dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg</p></div>
-                </div>
-     </paper-shadow>    <paper-shadow layout center>
-                
-                <div flex class="predheader">  <core-image src="../../images/vivi.jpg" preload fade cover center></core-image>
-                    <div flex>My predictions</div>
-                    <div flex>I predict that....</div>
-                </div>
-                <div flex class="predcontent">
-                    <div flex>Created:000/00/00</div> 
-                    <div flex>To be opened by: user</div>
-                    <div flex>Category: personal</div>
-                    <div flex><p>dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg</p></div>
-                </div>
-     </paper-shadow>    <paper-shadow layout center>
-                
-                <div flex class="predheader">  <core-image src="../../images/vivi.jpg" preload fade cover center></core-image>
-                    <div flex>My predictions</div>
-                    <div flex>I predict that....</div>
-                </div>
-                <div flex class="predcontent">
-                    <div flex>Created:000/00/00</div> 
-                    <div flex>To be opened by: user</div>
-                    <div flex>Category: personal</div>
-                    <div flex><p>dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg</p></div>
-                </div>
-     </paper-shadow>
+                  </paper-shadow>      
+                    </template> 
       
       
       
@@ -114,6 +30,36 @@
     (function () {
       Polymer({
         // define element prototype here
+            ready: function(){
+             
+              console.log(this.$.predictions.users[0].userName);
+              
+              this.mine = [];
+              
+             
+              var predictionsArray = this.$.predictions.usersPredictions;
+                 
+            
+              for(var i =0; i < predictionsArray.length; i++){      
+                if( predictionsArray[i].userId == 0){ //Hard coded, change to logged in
+                
+                    var newObject = 
+                                    {
+                                        //userName: predictionsArray[i].userName,
+                                        title: predictionsArray[i].title, 
+                                        created: predictionsArray[i].created,
+                                        openedBy: predictionsArray[i].openedBy,
+                                        category: predictionsArray[i].category,
+                                        content: predictionsArray[i].content
+                                    };
+                
+                this.mine.push(newObject); 
+                    console.log(this.mine[i]);
+                  }
+              } 
+            
+            }
+                   
       });
     })();
   </script>

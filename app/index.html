@@ -73,9 +73,22 @@
         </core-toolbar>
         
       <div class="content">
-        <core-list id="list" data="{{contacts}}" scrollTarget="{{$.headerPanel.scroller}}" runwayFactor="5" flex>
-            
+        
+         <core-list data="{{data}}" flex>
+            <template>
+                <div class="row">
+                    <div>{{model.name}}</div>
+                </div> 
+            </template>          
+                   
+          </core-list>
+  
+          
+          
+       <core-list id="list" data="{{data}}" scrollTarget="{{$.headerPanel.scroller}}" runwayFactor="5" flex>
+
         <core-animated-pages selected={{route}} valueattr="data-route" transitions="cross-fade">
+            
             <section data-route="home">
                 <the-latests cross-fade></the-latests>
             </section>
@@ -122,6 +135,7 @@
   </template>    
 
        <!-- build:js scripts/app.js -->
+  <script src="../bower_components/Faker/build/build/faker.js"></script>
   <script src="../bower_components/page.js/page.js"></script>    
   <script src="scripts/app.js"></script>
   <!-- endbuild-->

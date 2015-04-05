@@ -1,0 +1,100 @@
+<link rel="import" href="..\..\bower_components/polymer/polymer.html">
+
+<polymer-element name="the-predictions" attributes="">
+  <template>
+    <link rel="stylesheet" href="the-predictions.css">
+    
+            
+      
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+          ready: function(){  
+        
+        
+        this.users = [
+            {
+            userId: 0,
+            userName: 'vreveronz',
+            firstName: 'Viviana',
+            lastName: 'Reveron',
+            email: 'vreveron83@gmail.com',
+            phone: '345635',
+            friends: [1, 2],
+            avatar: "../../images/vivi.jpg"    
+            },
+            {
+            userId: 1,
+            userName: 'alf',
+            firstName: 'Alfredo',
+            lastName: 'Metere',
+            email: 'alf@gmail.com',
+            phone: '245635',
+            friends: [0, 2],
+            avatar: "../../images/vivi.jpg"     
+            },
+            {
+            userId: 2,
+            userName: 'rob',
+            firstName: 'Roberto',
+            lastName: 'Metere',
+            email: 'rob@gmail.com',
+            phone: '745635',
+            friends: [1],
+            avatar: "../../images/vivi.jpg"     
+            }
+        
+        ];
+        
+           
+              
+        this.usersPredictions = [
+              {
+               userId: 0,
+               predictionId: 0,          
+               title: 'tomorrows game', 
+               created: '00/00/00',
+               openedBy: 'user',
+               category: 'sports',
+               content: 'dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg'      
+              }, 
+            
+               {
+               userId: 0,
+               predictionId: 1,        
+               title: 'tomorrows play', 
+               created: '00/00/00',
+               openedBy: 'user',
+               category: 'sports',
+               content: 'dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg'      
+              }, 
+            
+               {
+               userId: 0,
+               predictionId: 2,        
+               title: 'tomorrows game', 
+               created: '00/00/00',
+               openedBy: 'user',
+               category: 'sports',
+               content: 'dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg'      
+              }, 
+            
+               {
+               userId: 1,
+               predictionId: 3,        
+               title: 'tomorrows game', 
+               created: '00/00/00',
+               openedBy: 'user',
+               category: 'sports',
+               content: 'dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg'      
+              }
+              
+          ];
+              
+          }
+      });
+    })();
+  </script>
+</polymer-element>

@@ -1,0 +1,23 @@
+<link rel="import" href="..\..\bower_components/polymer/polymer.html">
+
+<polymer-element name="log-in" attributes="">
+  <template>
+    <link rel="stylesheet" href="log-in.css">
+    <the-predictions id="predictions"></the-predictions>  
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+            ready: function(){
+             
+                //Hard coded, this should come from the log in system
+                this.loggedIn = "vreveronz"; 
+                this.avatar = "../../images/vivi.jpg";
+                this.friends = [1,2];
+            
+            }  
+      });
+    })();
+  </script>
+</polymer-element>

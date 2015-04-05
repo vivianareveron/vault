@@ -6,11 +6,12 @@
      
     
        <the-predictions id="predictions"></the-predictions>
+       <log-in id="logIn"></log-in>
       
              <template repeat="{{p in mine}}">   
                  <paper-shadow layout center>
                   
-                      <div flex class="predheader">  <core-image src="../../images/vivi.jpg" preload fade cover center></core-image>
+                      <div flex class="predheader">  <core-image src="{{p.avatar}}" preload fade cover center></core-image>
                     <div flex>{{p.userName}}</div>
                     <div flex>{{p.title}}</div>
                 </div>
@@ -38,14 +39,16 @@
               
              
               var predictionsArray = this.$.predictions.usersPredictions;
-                 
+              var credentials = this.$.logIn;     
+              console.log(credentials.loggedIn);     
             
               for(var i =0; i < predictionsArray.length; i++){      
                 if( predictionsArray[i].userId == 0){ //Hard coded, change to logged in
                 
                     var newObject = 
                                     {
-                                        //userName: predictionsArray[i].userName,
+                                        userName: credentials.loggedIn,
+                                        avatar: credentials.avatar,
                                         title: predictionsArray[i].title, 
                                         created: predictionsArray[i].created,
                                         openedBy: predictionsArray[i].openedBy,

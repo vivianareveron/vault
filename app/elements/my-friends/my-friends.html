@@ -45,7 +45,13 @@
                         
                         if(predictionsArray[i].userId == credentials.friends[j] && predictionsArray[i].type !== 'private'){ 
                 
-                        var newObject = 
+                               if(predictionsArray[i].open === true){
+                                    var theContent = predictionsArray[i].content;
+                                }else{
+                                theContent = "Content Vaulted";
+                                }
+                            
+                            var newObject = 
                                     {
                                         userName: predictionsArray[i].userName,
                                         avatar: predictionsArray[i].avatar,
@@ -53,7 +59,7 @@
                                         created: predictionsArray[i].created,
                                         openedBy: predictionsArray[i].openedBy,
                                         category: predictionsArray[i].category,
-                                        content: predictionsArray[i].content
+                                        content: theContent
                                     };
                 
                 this.friendsPredictions.push(newObject); 

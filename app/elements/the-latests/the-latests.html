@@ -49,8 +49,15 @@
               for(var i =0; i < predictionsArray.length; i++){      
     
                  
-                 
-                    var newObject = 
+                  if(predictionsArray[i].type == 'public' || predictionsArray[i].userId == credentials.activeUser){
+                    
+                        if(predictionsArray[i].open === true){
+                        var theContent = predictionsArray[i].content;
+                    }else{
+                        theContent = "Content Vaulted";
+                    }; 
+                      
+                      var newObject = 
                                     {
                                         userName: predictionsArray[i].userName,
                                         avatar: predictionsArray[i].avatar,
@@ -58,13 +65,40 @@
                                         created: predictionsArray[i].created,
                                         openedBy: predictionsArray[i].openedBy,
                                         category: predictionsArray[i].category,
-                                        content: predictionsArray[i].content
+                                        content: theContent
                                     };
                 
-                this.latest.push(newObject); 
+                   this.latest.push(newObject);
+                  
+                  }
+                  
+                  for(j =0; j < credentials.friends.length; j++){ 
+                  
+                    if (predictionsArray[i].userId == credentials.friends[j] && predictionsArray[i].type !== 'private'){
+                 
+                        if(predictionsArray[i].open === true){
+                        var theContent = predictionsArray[i].content;
+                        }else{
+                           theContent = "Content Vaulted";
+                        };
+                       
+                        var newObject = 
+                                    {
+                                        userName: predictionsArray[i].userName,
+                                        avatar: predictionsArray[i].avatar,
+                                        title: predictionsArray[i].title, 
+                                        created: predictionsArray[i].created,
+                                        openedBy: predictionsArray[i].openedBy,
+                                        category: predictionsArray[i].category,
+                                        content: theContent
+                                    };
+                
+                   this.latest.push(newObject);
+                 }
                     
-                  }    
-            
+              }
+                 
+            }
         }
       });
     })();

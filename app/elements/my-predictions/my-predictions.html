@@ -43,7 +43,13 @@
             
               for(var i =0; i < predictionsArray.length; i++){      
                 if( predictionsArray[i].userId == credentials.activeUser){ 
-                
+                    
+                    if(predictionsArray[i].open === true){
+                        var theContent = predictionsArray[i].content;
+                    }else{
+                        theContent = "Content Vaulted";
+                    }
+                    
                     var newObject = 
                                     {
                                         userName: credentials.loggedIn,
@@ -52,7 +58,7 @@
                                         created: predictionsArray[i].created,
                                         openedBy: predictionsArray[i].openedBy,
                                         category: predictionsArray[i].category,
-                                        content: predictionsArray[i].content
+                                        content: theContent
                                     };
                 
                 this.mine.push(newObject); 

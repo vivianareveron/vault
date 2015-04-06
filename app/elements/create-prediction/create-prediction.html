@@ -3,7 +3,57 @@
 <polymer-element name="create-prediction" attributes="">
   <template>
     <link rel="stylesheet" href="create-prediction.css">
-      <h1>Create prediction</h1>
+      
+      
+    <div layout vertical>   
+     <form>
+            <div flex layout center>
+            <core-icon icon="social:person"></core-icon>
+            </div>
+            <div flex layout center>
+            <paper-input class="item item-input" label="Title"
+                         value="{{contactName}}" flex>
+            </paper-input>
+         </div>
+            <paper-radio-group selected="yes">
+            <paper-radio-button name="yes" label="Yes"></paper-radio-button>
+            <paper-radio-button name="no" label="No"></paper-radio-button>
+           
+            </paper-radio-group>
+            
+            <paper-dropdown-menu class="item item-menu">
+              <paper-dropdown class="dropdown">
+                <core-menu class="menu" selected="" valueattr="label">
+                  <paper-item label="Public">Public</paper-item>
+                  <paper-item label="Friends">Friends</paper-item>
+                  <paper-item label="Private">Private</paper-item>
+                </core-menu>
+              </paper-dropdown>
+            </paper-dropdown-menu>
+         
+            <paper-dropdown-menu class="item item-menu">
+              <paper-dropdown class="dropdown">
+                <core-menu class="menu" selected="" valueattr="label">
+                  <paper-item label="Astrology">Astrology</paper-item>
+                  <paper-item label="Market">Market</paper-item>
+                  <paper-item label="Personal">Personal</paper-item>    
+                  <paper-item label="Politics">Politics</paper-item>    
+                  <paper-item label="Science">Science</paper-item>
+                  <paper-item label="Sports">Sports</paper-item>
+                  <paper-item label="Technology">Technology</paper-item>
+                  <paper-item label="Other">Other</paper-item>    
+                </core-menu>
+              </paper-dropdown>
+            </paper-dropdown-menu>
+            <paper-button label="send">Send</paper-button>
+      </form>
+      </div> 
+              
+           
+               openedBy: 
+               content: 
+
+         
   </template>
   <script>
     (function () {

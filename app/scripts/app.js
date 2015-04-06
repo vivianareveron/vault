@@ -7,7 +7,7 @@
   var app = document.querySelector('#app');
   app.appName = 'Prediction Vault';
   app.route = 'home'; 
-  app.data = 'soy la data';
+  
    
 
   // Listen for template bound event to know when bindings

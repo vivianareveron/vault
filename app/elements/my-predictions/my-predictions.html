@@ -8,23 +8,22 @@
        <the-predictions id="predictions"></the-predictions>
        <log-in id="logIn"></log-in>
       
-             <template repeat="{{p in mine}}">   
+             <template repeat="{{mine | orderBy('created')}}">   
                  <paper-shadow layout center>
                   
-                      <div flex class="predheader">  <core-image src="{{p.avatar}}" preload fade cover center></core-image>
-                    <div flex>{{p.userName}}</div>
-                    <div flex>{{p.title}}</div>
+               <div flex class="predheader">  
+                    <core-image src="{{avatar}}" preload fade cover center></core-image>
+                    <div flex>{{userName}}</div>
+                    <div flex>{{title}}</div>
                 </div>
                 <div flex class="predcontent">
-                    <div flex>Created:{{p.created}}</div> 
-                    <div flex>To be opened by:{{p.openedBy}}</div>
-                    <div flex>Category: {{p.category}}</div>
-                    <div flex><p>{{p.content}}</p></div>
+                    <div flex>Created: {{created | date('yyyy-MM-dd HH:mm:ss')}}</div> 
+                    <div flex>To be opened by: {{openedBy}}</div>
+                    <div flex>Category: {{category}}</div>
+                    <div flex><p>{{content}}</p></div>
                 </div>
                   </paper-shadow>      
                     </template> 
-      
-      
       
   </template>
   <script>
@@ -43,7 +42,7 @@
               console.log(credentials.loggedIn);     
             
               for(var i =0; i < predictionsArray.length; i++){      
-                if( predictionsArray[i].userId == 0){ //Hard coded, change to logged in
+                if( predictionsArray[i].userId == credentials.activeUser){ 
                 
                     var newObject = 
                                     {

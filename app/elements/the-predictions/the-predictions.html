@@ -44,50 +44,87 @@
             phone: '745635',
             friends: [1],
             avatar: "../../images/vivi.jpg"     
+            },
+            
+            {
+            userId: 3,
+            userName: 'vero',
+            firstName: 'Veronica',
+            lastName: 'Rodriguez',
+            email: 'vero@gmail.com',
+            phone: '3455635',
+            friends: [1,2],
+            avatar: "../../images/vivi.jpg"     
             }
+        
         
         ];
         
            
-              
+ //User name and avatar are repeated because I have no database so I can't correlate the tables, the idea is to use userId only             
         this.usersPredictions = [
               {
                userId: 0,
+               userName: 'vreveronz', 
+               avatar: "../../images/vivi.jpg",       
                predictionId: 0,          
                title: 'tomorrows game', 
-               created: '00/00/00',
+               created: 1425645120000,
                openedBy: 'user',
                category: 'sports',
+               type: 'private',      
                content: 'dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg'      
               }, 
             
                {
                userId: 0,
+               userName: 'vreveronz',
+               avatar: "../../images/vivi.jpg",          
                predictionId: 1,        
                title: 'tomorrows play', 
-               created: '00/00/00',
+               created: 1223225120000,
                openedBy: 'user',
                category: 'sports',
+               type: 'friends',       
                content: 'dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg'      
               }, 
             
                {
-               userId: 0,
+               userId: 2,
+               userName: 'rob',
+               avatar: "../../images/vivi.jpg",       
                predictionId: 2,        
                title: 'tomorrows game', 
-               created: '00/00/00',
+               created: Date.now(),
                openedBy: 'user',
                category: 'sports',
+               type: 'friends',       
                content: 'dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg'      
               }, 
             
                {
                userId: 1,
+               userName: 'alf',
+               avatar: "../../images/vivi.jpg",       
                predictionId: 3,        
                title: 'tomorrows game', 
-               created: '00/00/00',
+               created: Date.now(),
                openedBy: 'user',
                category: 'sports',
+               type: 'private',
+               content: 'dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg'      
+              },
+            
+              {
+               userId: 3,
+               userName: 'vero',
+               avatar: "../../images/vivi.jpg",       
+               predictionId: 4,        
+               title: 'hola', 
+               created: Date.now(),
+               openedBy: 'user',
+               category: 'sports',
+               type: 'private',
                content: 'dsfrwetertertertertwert ertv ertert ert Urtheroughe ergujerg aergaergaerg aergaergaerg a ergaerfgerg aeg aer gaer  aergaertgergaerg  aergaerg  grae g rg aerg ae rg erg'      
               }
               

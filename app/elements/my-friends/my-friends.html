@@ -4,10 +4,25 @@
   <template>
     <link rel="stylesheet" href="my-friends.css">
       
-      <template>
-        <the-predictions></the-predictions> 
-      </template>
-     
+       <the-predictions id="predictions"></the-predictions>
+       <log-in id="logIn"></log-in>
+      
+             <template repeat="{{friendsPredictions | orderBy('created')}}">   
+                 <paper-shadow layout center>
+                  
+               <div flex class="predheader">  
+                    <core-image src="{{avatar}}" preload fade cover center></core-image>
+                    <div flex>{{userName}}</div>
+                    <div flex>{{title}}</div>
+                </div>
+                <div flex class="predcontent">
+                    <div flex>Created: {{created | date('yyyy-MM-dd HH:mm:ss')}}</div> 
+                    <div flex>To be opened by: {{openedBy}}</div>
+                    <div flex>Category: {{category}}</div>
+                    <div flex><p>{{content}}</p></div>
+                </div>
+                  </paper-shadow>      
+                    </template> 
 
           
   </template>
@@ -15,6 +30,39 @@
     (function () {
       Polymer({
         // define element prototype here
+        ready: function(){
+              
+              this.friendsPredictions = [];
+              var predictionsArray = this.$.predictions.usersPredictions;
+              var credentials = this.$.logIn;     
+                   
+            
+              for(i =0; i < predictionsArray.length; i++){
+                  
+                  console.log(credentials.friends[i]);
+                  
+                    for(j =0; j < credentials.friends.length; j++){  
+                        
+                        if(predictionsArray[i].userId == credentials.friends[j] && predictionsArray[i].type !== 'private'){ 
+                
+                        var newObject = 
+                                    {
+                                        userName: predictionsArray[i].userName,
+                                        avatar: predictionsArray[i].avatar,
+                                        title: predictionsArray[i].title, 
+                                        created: predictionsArray[i].created,
+                                        openedBy: predictionsArray[i].openedBy,
+                                        category: predictionsArray[i].category,
+                                        content: predictionsArray[i].content
+                                    };
+                
+                this.friendsPredictions.push(newObject); 
+                    console.log(this.friendsPredictions[i]);
+                  }
+                }
+              } 
+            
+            }
       });
     })();
   </script>

@@ -4,56 +4,74 @@
   <template>
     <link rel="stylesheet" href="create-prediction.css">
       
-      
-    <div layout vertical>   
+    <paper-shadow>
+    <div layout vertical id="createPrediction" center-justified> 
+     <h1>Create Prediction</h1>        
      <form>
-            <div flex layout center>
-            <core-icon icon="social:person"></core-icon>
-            </div>
-            <div flex layout center>
-            <paper-input class="item item-input" label="Title"
-                         value="{{contactName}}" flex>
+            
+         <div flex layout center class="row">
+             <h3>Add an title</h3>    
+             <paper-input class="item item-input" label="Title"
+                         value="" flex>
             </paper-input>
          </div>
+         
+         <div flex layout center class="row">
+             <h3>Vault Content?</h3>
             <paper-radio-group selected="yes">
             <paper-radio-button name="yes" label="Yes"></paper-radio-button>
             <paper-radio-button name="no" label="No"></paper-radio-button>
-           
             </paper-radio-group>
+         </div>         
             
-            <paper-dropdown-menu class="item item-menu">
-              <paper-dropdown class="dropdown">
-                <core-menu class="menu" selected="" valueattr="label">
-                  <paper-item label="Public">Public</paper-item>
-                  <paper-item label="Friends">Friends</paper-item>
-                  <paper-item label="Private">Private</paper-item>
-                </core-menu>
-              </paper-dropdown>
-            </paper-dropdown-menu>
+         <div flex layout center class="row">
+             <h3>To be opened by</h3>
+            <paper-radio-group selected="date">
+                <paper-radio-button name="user" label="User"></paper-radio-button>
+                <paper-radio-button name="date" label="Date"></paper-radio-button>
+            </paper-radio-group>    
+            <paper-input class="item item-input" label="yyyy-mm-dd" value="" flex>
+            </paper-input>    
+              
+         </div>       
          
-            <paper-dropdown-menu class="item item-menu">
-              <paper-dropdown class="dropdown">
-                <core-menu class="menu" selected="" valueattr="label">
-                  <paper-item label="Astrology">Astrology</paper-item>
-                  <paper-item label="Market">Market</paper-item>
-                  <paper-item label="Personal">Personal</paper-item>    
-                  <paper-item label="Politics">Politics</paper-item>    
-                  <paper-item label="Science">Science</paper-item>
-                  <paper-item label="Sports">Sports</paper-item>
-                  <paper-item label="Technology">Technology</paper-item>
-                  <paper-item label="Other">Other</paper-item>    
-                </core-menu>
-              </paper-dropdown>
+         <div flex layout center class="row">
+            <h3>Choose privacy</h3> 
+            <paper-radio-group selected="friends">
+            <paper-radio-button name="private" label="Private"></paper-radio-button>
+            <paper-radio-button name="friends" label="Friends"></paper-radio-button>
+            <paper-radio-button name="public" label="Public"></paper-radio-button>    
+            </paper-radio-group>
+         </div> 
+             
+            <div flex layout center class="row">
+                <h3>Category</h3>
+                <paper-dropdown-menu class="item item-menu">
+                    <paper-dropdown class="dropdown">
+                        <core-menu class="menu" selected="" valueattr="label">
+                            <paper-item label="Astrology">Astrology</paper-item>
+                            <paper-item label="Market">Market</paper-item>
+                            <paper-item label="Personal">Personal</paper-item>    
+                            <paper-item label="Politics">Politics</paper-item>    
+                            <paper-item label="Science">Science</paper-item>
+                            <paper-item label="Sports">Sports</paper-item>
+                            <paper-item label="Technology">Technology</paper-item>
+                            <paper-item label="Other">Other</paper-item>    
+                        </core-menu>
+                    </paper-dropdown>
             </paper-dropdown-menu>
-            <paper-button label="send">Send</paper-button>
+           </div>    
+            
+            <div flex layout center class="row">
+            <textarea flex></textarea>
+            </div>    
+            <div flex layout center class="row">
+            <paper-button label="send" raised colored>Send</paper-button>
+         </div>    
       </form>
       </div> 
-              
+      </paper-shadow>            
            
-               openedBy: 
-               content: 
-
-         
   </template>
   <script>
     (function () {

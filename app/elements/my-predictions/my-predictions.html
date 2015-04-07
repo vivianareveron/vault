@@ -4,7 +4,6 @@
   <template>
     <link rel="stylesheet" href="my-predictions.css">
      
-    
        <the-predictions id="predictions"></the-predictions>
        <log-in id="logIn"></log-in>
       
@@ -19,8 +18,10 @@
                 <div flex class="predcontent">
                     <div flex>Created: {{created | date('yyyy-MM-dd HH:mm:ss')}}</div> 
                     <div flex>To be opened by: {{openedBy}}</div>
-                    <div flex>Category: {{category}}</div>
-                    <div flex><p>{{content}}</p></div>
+                    <div flex>Category: {{category}}</div>        
+                    <div flex><p>{{content}}<template bind if="{{open == false && openedBy == 'date'}}"> until {{openedBy}}</p></template></div>
+                    <template if="{{open == false && openedBy == 'user'}}"><div flex><open-button id='openButton'></open-button></div></template> //The problem might be the loop
+                    
                 </div>
                   </paper-shadow>      
                     </template> 
@@ -32,7 +33,8 @@
         // define element prototype here
             ready: function(){
              
-              console.log(this.$.predictions.users[0].userName);
+              //Create array to show the user's predictions
+                
               
               this.mine = [];
               
@@ -58,14 +60,24 @@
                                         created: predictionsArray[i].created,
                                         openedBy: predictionsArray[i].openedBy,
                                         category: predictionsArray[i].category,
-                                        content: theContent
+                                        content: theContent,
+                                        open: predictionsArray[i].open,
+                                        openedBy: predictionsArray[i].openedBy
                                     };
                 
                 this.mine.push(newObject); 
                     console.log(this.mine[i]);
                   }
-              } 
-            
+              
+                
+              }
+                
+                //Open button
+                
+                    console.log(this.$.openButton);
+                
+                
+              
             }
                    
       });

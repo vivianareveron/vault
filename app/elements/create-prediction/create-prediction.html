@@ -3,6 +3,9 @@
 <polymer-element name="create-prediction" attributes="">
   <template>
     <link rel="stylesheet" href="create-prediction.css">
+    
+    <the-predictions id="predictions"></the-predictions>
+    <log-in></log-in>  
       
     <paper-shadow>
     <div layout vertical id="createPrediction" center-justified> 
@@ -66,7 +69,7 @@
             <textarea flex></textarea>
             </div>    
             <div flex layout center class="row">
-            <paper-button label="send" raised colored>Send</paper-button>
+               <create-button id="createButton"></create-button>
          </div>    
       </form>
       </div> 
@@ -77,6 +80,15 @@
     (function () {
       Polymer({
         // define element prototype here
+          ready: function(){
+            
+              this.$.createButton.onclick = function (){
+              
+                  console.log('i was clicked')
+              
+              }
+          
+          }
       });
     })();
   </script>

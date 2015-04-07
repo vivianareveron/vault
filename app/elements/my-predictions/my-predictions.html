@@ -11,16 +11,16 @@
                  <paper-shadow layout center>
                   
                <div flex class="predheader">  
-                    <core-image src="{{avatar}}" preload fade cover center></core-image>
+                    <core-image src="{{avatar}}" preload sizing="cover" fade></core-image>
                     <div flex>{{userName}}</div>
-                    <div flex>{{title}}</div>
+                    <div flex><h4>{{title}}</h4></div>
                 </div>
                 <div flex class="predcontent">
-                    <div flex>Created: {{created | date('yyyy-MM-dd HH:mm:ss')}}</div> 
-                    <div flex>To be opened by: {{openedBy}}</div>
-                    <div flex>Category: {{category}}</div>        
+                    <div flex><h4>Created:</h4> {{created | date('yyyy-MM-dd HH:mm:ss')}}</div> 
+                    <div flex><h4>To be opened by:</h4> {{openedBy}}</div>
+                    <div flex><h4>Category:</h4> {{category}}</div>        
                     <div flex><p>{{content}}<template bind if="{{open == false && openedBy == 'date'}}"> until {{openedBy}}</p></template></div>
-                    <template if="{{open == false && openedBy == 'user'}}"><div flex><open-button id='openButton'></open-button></div></template>
+                    <template if="{{open == false && openedBy == 'user'}}"><div flex><open-button id='openButton' ></open-button></div></template>
                     
                 </div>
                   </paper-shadow>      
@@ -41,8 +41,7 @@
              
               var predictionsArray = this.$.predictions.usersPredictions;
               var credentials = this.$.logIn;     
-              console.log(credentials.loggedIn);     
-            
+           
               for(var i =0; i < predictionsArray.length; i++){      
                 if( predictionsArray[i].userId == credentials.activeUser){ 
                     
@@ -66,17 +65,14 @@
                                     };
                 
                 this.mine.push(newObject); 
-                    console.log(this.mine[i]);
-                  }
+                   
               
                 
               }
                 
-                //Open button
+              
                 
-                    console.log(this.$.openButton);
-                
-                
+              }
               
             }
                    

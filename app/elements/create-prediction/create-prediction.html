@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="create-prediction.css">
     
     <the-predictions id="predictions"></the-predictions>
-    <log-in></log-in>  
+    <log-in id="logIn"></log-in>  
       
     <paper-shadow>
     <div layout vertical id="createPrediction" center-justified> 
@@ -82,11 +82,7 @@
         // define element prototype here
           ready: function(){
             
-              this.$.createButton.onclick = function (){
-              
-                  console.log('i was clicked')
-              
-              }
+           
           
           }
       });

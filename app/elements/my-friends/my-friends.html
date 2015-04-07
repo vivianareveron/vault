@@ -11,14 +11,14 @@
                  <paper-shadow layout center>
                   
                <div flex class="predheader">  
-                    <core-image src="{{avatar}}" preload fade cover center></core-image>
+                    <core-image src="{{avatar}}" preload fade sizing="cover" center></core-image>
                     <div flex>{{userName}}</div>
-                    <div flex>{{title}}</div>
+                   <div flex><h4>{{title}}</h4></div>
                 </div>
                 <div flex class="predcontent">
-                    <div flex>Created: {{created | date('yyyy-MM-dd HH:mm:ss')}}</div> 
-                    <div flex>To be opened by: {{openedBy}}</div>
-                    <div flex>Category: {{category}}</div>
+                    <div flex><h4>Created: </h4>{{created | date('yyyy-MM-dd HH:mm:ss')}}</div> 
+                    <div flex><h4>To be opened by: </h4>{{openedBy}}</div>
+                    <div flex><h4>Category: </h4>{{category}}</div>
                     <div flex><p>{{content}}</p></div>
                 </div>
                   </paper-shadow>      
@@ -38,8 +38,6 @@
                    
             
               for(i =0; i < predictionsArray.length; i++){
-                  
-                  console.log(credentials.friends[i]);
                   
                     for(j =0; j < credentials.friends.length; j++){  
                         
@@ -63,7 +61,7 @@
                                     };
                 
                 this.friendsPredictions.push(newObject); 
-                    console.log(this.friendsPredictions[i]);
+                    
                   }
                 }
               } 

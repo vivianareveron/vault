@@ -10,6 +10,7 @@
 
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto|Iceberg|Graduate' rel='stylesheet' type='text/css'>    
   <!-- endbuild-->
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
@@ -28,7 +29,7 @@
     <core-drawer-panel id='drawerPanel'>
       <core-header-panel drawer mode="seamed" shadow="true">
             <core-toolbar>
-                <paper-item noink>Menu</paper-item>
+                <paper-item noink>Menu <h5>Prediction Vault</h5></paper-item>
             </core-toolbar>
         <core-menu selected="{{route}}" valueattr="data-route">
               
@@ -73,17 +74,6 @@
         </core-toolbar>
         
       <div class="content">
-        
-         <core-list data="{{data}}" flex>
-            <template>
-                <div class="row">
-                    <div>{{model.name}}</div>
-                </div> 
-            </template>          
-                   
-          </core-list>
-  
-          
           
        <core-list id="list" data="{{data}}" scrollTarget="{{$.headerPanel.scroller}}" runwayFactor="5" flex>
 

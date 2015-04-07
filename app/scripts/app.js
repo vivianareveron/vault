@@ -13,7 +13,7 @@
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('template-bound', function() {
-    console.log('Our app is ready to rock!');
+   
   });
 
  

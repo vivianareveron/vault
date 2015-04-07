@@ -1,6 +1,6 @@
 body {
   background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #333;
 }
 
@@ -30,11 +30,16 @@ body {
 
 [drawer] {
   background-color: #EEEEEE;
+    
+  .core-selected{
+    background-color: #ddd;
+}    
 }
 
 core-toolbar {
   color: #FAFAFA;
-  background-color: #009688;
+  background-color: #AB2649;
+    
     
 }
 
@@ -62,3 +67,16 @@ core-item{
     padding: 20px;
 
 }
+
+h5{
+    margin-left: 50px;
+    font-family: 'Graduate', cursive;
+    font-size: 0.8em;
+    
+
+}
+
+
+
+
+

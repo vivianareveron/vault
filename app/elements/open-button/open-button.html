@@ -6,10 +6,17 @@
     <style>
       :host {
         display: block;
+          
+            
       }
+      .openButton{
+    background: #AB2649 ;
+    color: #fff ;
+          
+}    
     </style>
       
-      <paper-button label="openButton" id="openButton" raised class="colored" on-click="{{openContent()}}">Open</paper-button>
+      <paper-button label="openButton" id="openButton" class="openButton" raised  on-click="{{openContent()}}">Open</paper-button>
       
       
   </template>
